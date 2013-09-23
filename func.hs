@@ -36,4 +36,4 @@ main = do
 
 	
 	--printf  "the length of this list is %d"  (length' [1,2,3,4,5])
-	printf "the length of this list is %d\n" ((length' [1, 2, 3, 4]) :: Integer)
+	printf "the length of this list is %d\n" ((length' [1, 2, 3, 4]) :: Integer) --      ::Integer  is important, this will cat type to Integer , avoid type ambiguity.
