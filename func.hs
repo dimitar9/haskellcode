@@ -24,6 +24,19 @@ length' :: (Num b) => [a] ->  b
 length' [] = 0
 length' (_:xs) = 1 + length' xs
 
+maximum' :: (Ord a) => [a] -> a
+maximum' [] = error "maximum of empty list"
+maximum' [x] = x
+maximum' (x:xs) 
+	| x > maxTail = x
+	| otherwise = maxTail
+	where maxTail = maximum' xs 
+
+
+map_my:: (a -> b) -> [a] -> [b]
+map_my _[] = []
+map_my f (x:xs) = f x : map_my f xs
+
 main = do
 	putStrLn (charName 'a')
 
@@ -37,3 +50,5 @@ main = do
 	
 	--printf  "the length of this list is %d"  (length' [1,2,3,4,5])
 	printf "the length of this list is %d\n" ((length' [1, 2, 3, 4]) :: Integer) --      ::Integer  is important, this will cat type to Integer , avoid type ambiguity.
+	print (maximum' [1,2,3,4,5])
+	print (map_my (+3) [1,5,3,1,6])
