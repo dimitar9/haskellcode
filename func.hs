@@ -1,4 +1,5 @@
 import Text.Printf
+import Data.List
 charName :: Char -> String
 charName 'a' = "Albert"
 charName 'b' = "Broseph"
@@ -52,3 +53,6 @@ main = do
 	printf "the length of this list is %d\n" ((length' [1, 2, 3, 4]) :: Integer) --      ::Integer  is important, this will cat type to Integer , avoid type ambiguity.
 	print (maximum' [1,2,3,4,5])
 	print (map_my (+3) [1,5,3,1,6])
+
+	print (intersperse '.' "Monkey")
+	print (intersperse 0 [1,2,3,4,5,6,7])
