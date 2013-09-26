@@ -38,7 +38,38 @@ map_my:: (a -> b) -> [a] -> [b]
 map_my _[] = []
 map_my f (x:xs) = f x : map_my f xs
 
+mfilter :: (a -> Bool) -> [a] -> [a]
+mfilter _[] = []
+mfilter p (x:xs)
+	| p x = x: mfilter p xs
+	| otherwise = mfilter p xs
+
+
+
+quicksort2 :: (Ord a) => [a] -> [a]    
+quicksort2 [] = []    
+quicksort2 (x:xs) =     
+    let smallerSorted = quicksort2 (filter (<=x) xs)  
+        biggerSorted = quicksort2 (filter (>x) xs)   
+    in  smallerSorted ++ [x] ++ biggerSorted  
+
+largestDivisible :: (Integral a) => a
+largestDivisible = head (filter p [1000000, 99999..])
+	where p x = x `mod` 3829 == 0
+    
+chain :: (Integral a) => a -> [a]  
+chain 1 = [1]  
+chain n  
+    | even n =  n:chain (n `div` 2)  
+    | odd n  =  n:chain (n*3 + 1)  
+
+numLongChains :: Int  
+numLongChains = length (filter isLong (map chain [1..100]))  
+    where isLong xs = length xs > 15  
 main = do
+	print (numLongChains )
+	print (largestDivisible )
+	print (quicksort2 [1,3,42,1,224,12,2,3,4,5,6,7])
 	putStrLn (charName 'a')
 
 	print a
@@ -54,5 +85,12 @@ main = do
 	print (maximum' [1,2,3,4,5])
 	print (map_my (+3) [1,5,3,1,6])
 
+
 	print (intersperse '.' "Monkey")
 	print (intersperse 0 [1,2,3,4,5,6,7])
+
+	print (map_my (replicate 3) [3..6] )
+
+	print (mfilter even [1..10])
+	print (inits "w00t")
+
