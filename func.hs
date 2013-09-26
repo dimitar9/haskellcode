@@ -1,5 +1,8 @@
 import Text.Printf
 import Data.List
+import Data.Char
+import qualified Data.Map as Map
+import qualified Data.Set as Set
 charName :: Char -> String
 charName 'a' = "Albert"
 charName 'b' = "Broseph"
@@ -66,6 +69,9 @@ chain n
 numLongChains :: Int  
 numLongChains = length (filter isLong (map chain [1..100]))  
     where isLong xs = length xs > 15  
+
+
+ 
 main = do
 	print (numLongChains )
 	print (largestDivisible )
