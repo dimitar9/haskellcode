@@ -70,9 +70,17 @@ numLongChains :: Int
 numLongChains = length (filter isLong (map chain [1..100]))  
     where isLong xs = length xs > 15  
 
+data Point = Point Float Float deriving (Show)
+    
+data Shape = Circle Point Float | Rectangle Point Point deriving (Show)
+surface :: Shape -> Float
+surface (Circle _ r)  = 2 * pi * r
+surface (Rectangle (Point x1 y1) (Point x2 y2)) = (abs $ x2-x1)* (abs $ y1-y1)
 
-data Shape = Circle Float Float Float deriving (Show)
 
+    
+    
+    
 main = do
 	print (numLongChains )
 	print (largestDivisible )
@@ -92,13 +100,10 @@ main = do
 	print (maximum' [1,2,3,4,5])
 	print (map_my (+3) [1,5,3,1,6])
 
-
 	print (intersperse '.' "Monkey")
 	print (intersperse 0 [1,2,3,4,5,6,7])
 
 	print (map_my (replicate 3) [3..6] )
 
 	print (mfilter even [1..10])
-	print (inits "w00t")
-   
     
