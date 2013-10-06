@@ -71,7 +71,8 @@ numLongChains = length (filter isLong (map chain [1..100]))
     where isLong xs = length xs > 15  
 
 
- 
+data Shape = Circle Float Float Float deriving (Show)
+
 main = do
 	print (numLongChains )
 	print (largestDivisible )
@@ -99,4 +100,5 @@ main = do
 
 	print (mfilter even [1..10])
 	print (inits "w00t")
-
+   
+    
