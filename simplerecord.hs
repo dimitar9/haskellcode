@@ -7,12 +7,12 @@ data Person = Person {
                     ,   flavor :: String
 }deriving(Show)
 
-
     
     
 guy = Person "Buddy" "Finklestein" 43 184.2 "526-1234" "Vanilla"
 
     
+data Maybe a = Nothing | Just a
     
     
     
@@ -23,3 +23,8 @@ main = do
     print (guy)
     print (firstname guy)
     print (flavor guy)
+    
+
+
+
+    
