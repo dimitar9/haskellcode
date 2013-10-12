@@ -5,9 +5,19 @@
 data Person = Person { firstName :: String
                       ,lastName  :: String
                       ,age :: Int
-} deriving (Eq)
+} deriving (Eq,Show,Read)
 
 mikeD = Person {firstName = "Michael", lastName = "Diamond" , age = 43}
 adRock = Person {firstName = "Adam", lastName = "Horovitz" , age = 41}
+mca = Person {firstName="Adam",lastName ="Yauch",age =44}
+    
+beastieBoys = [mca,adRock,mikeD]    
+
+
+data Day = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
+    deriving (Eq, Ord,Show,Read,Bounded,Enum)
+    
 main = do
     print (mikeD == adRock)
+    print (mikeD `elem` beastieBoys)
+    print mikeD
