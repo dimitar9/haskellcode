@@ -1,4 +1,12 @@
+import Data.Char
+
 main = do
-    putStrLn "Hello, what's your name?"
-    name <- getLine
-    putStrLn ("hey" ++ name ++ ", you rock!")
+    putStrLn "Hello, what's your first name?"
+    firstName <- getLine
+    putStrLn "What is your last name?"
+    lastName <- getLine
+    let bigFirstName = map toUpper firstName
+        bigLastName  = map toUpper lastName
+    putStrLn $ "hey " ++ bigFirstName ++ " " ++ bigLastName ++ ", how are you?" 
+
+
