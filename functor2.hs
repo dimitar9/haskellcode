@@ -3,3 +3,6 @@ main = do line <- fmap reverse getLine
           putStrLn $ "Yes, you really said" ++ line ++ " backwards!" 
 
         --  putStrLn <- fmap (replicate 3) [1,2,3,4]
+        --
+        --  Functors law 
+        --  1. fmap id = id
