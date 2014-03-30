@@ -1,0 +1,16 @@
+ghci> :load syslogclient.hs
+[1 of 2] Compiling SyslogTypes      ( SyslogTypes.hs, interpreted )
+[2 of 2] Compiling Main             ( syslogclient.hs, interpreted )
+Ok, modules loaded: SyslogTypes, Main.
+ghci> h <- openlog "localhost" "514" "testprog"
+Loading package parsec-2.1.0.0 ... linking ... done.
+Loading package network-2.1.0.0 ... linking ... done.
+ghci> syslog h USER INFO "This is my message"
+ghci> closelog h
+
+
+
+ serveLog "1514" plainHandler
+
+
+  sudo tcpdump -i lo -XXnns0
