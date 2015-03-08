@@ -2,6 +2,8 @@ Good course:
 
 https://cseweb.ucsd.edu/classes/wi12/cse230-a/lectures.html
 
+Haskell keywords:
+https://wiki.haskell.org/Keywords
 
 Study log:
 https://cseweb.ucsd.edu/classes/wi12/cse230-a/static/lec1-2x2.pdf page 17
