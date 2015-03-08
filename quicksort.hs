@@ -4,7 +4,7 @@ quicksort [] = []
 quicksort (x:xs) =
     let smallerOrEqual = [a | a <- xs, a <= x]
         larger = [a | a <- xs, a > x]
-    in quicksort smallerOrEqual ++ [x] ++ larger
+    in quicksort smallerOrEqual ++ [x] ++ quicksort larger
 
 main = do
 	let a = [ 5, 1, 9, 4, 6, 7, 3]
